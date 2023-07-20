@@ -20,11 +20,12 @@ tasks = []
 for task in todo:
     tasks.append({'USER_ID': employee.get('id'),
                   'USERNAME': employee.get('username'),
-                  })
+                  'TASK_COMPLETED_STATUS': str(task.get('completed')),
+                  'TASK_TITLE': task.get('title')})
 
 with open(f'{argv[1]}.csv', 'w', newline='') as csvfile:
     fieldnames = ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer = csv.DictWriter(
+        csvfile, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)
 
-    writer.writeheader()
-    
+    writer.writerows(tasks)
