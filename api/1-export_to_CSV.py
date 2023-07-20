@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Use requests and json to get and transform data from jsonplaceholder 
+""" Use requests and json to get and transform data from jsonplaceholder
 into csv
 """
 
