@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 """ Use requests and json to get and deserialize data from jsonplaceholder """
+
 import requests
 from sys import argv
 
+if not argv[1]:
+    exit()
 employeeURL = f"http://jsonplaceholder.typicode.com/users/{argv[1]}"
 todoURL = f"http://jsonplaceholder.typicode.com/users/{argv[1]}/todos"
 employeeREQ = requests.get(employeeURL)
