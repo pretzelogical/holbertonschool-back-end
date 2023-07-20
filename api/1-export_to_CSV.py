@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-import requests
-from sys import argv
-import csv
 """ Use requests and json to get and transform data from jsonplaceholder
 into csv
 """
+import requests
+from sys import argv
+import csv
 
 if not argv[1]:
     exit()
