@@ -2,11 +2,13 @@
 """ Use requests and json to get and deserialize data from jsonplaceholder """
 
 import requests
-import sys
+from sys import argv
 
-employeeID = sys.argv[1]
-employeeURL = f"http://jsonplaceholder.typicode.com/users/{employeeID}"
-todoURL = f"http://jsonplaceholder.typicode.com/users/{employeeID}/todos"
+if len(argv) != 2:
+    print("user_id required!")
+    exit()
+employeeURL = f"http://jsonplaceholder.typicode.com/users/{argv[1]}"
+todoURL = f"http://jsonplaceholder.typicode.com/users/{argv[1]}/todos"
 employeeREQ = requests.get(employeeURL)
 todoREQ = requests.get(todoURL)
 employee = employeeREQ.json()

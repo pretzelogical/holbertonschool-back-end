@@ -6,7 +6,8 @@ import requests
 from sys import argv
 import csv
 
-if not argv[1]:
+if len(argv) != 2:
+    print("user_id required!")
     exit()
 employeeURL = f"http://jsonplaceholder.typicode.com/users/{argv[1]}"
 todoURL = f"http://jsonplaceholder.typicode.com/users/{argv[1]}/todos"
