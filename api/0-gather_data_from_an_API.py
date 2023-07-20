@@ -23,7 +23,7 @@ for task in todo:
         finished_task_text.append(task.get('title'))
         finished_tasks += 1
 
-print("Employee {} is done with tasks({}/{})"
+print("Employee {} is done with tasks({}/{}):"
       .format(employee.get('name'), finished_tasks, total_tasks))
 
 for task in finished_task_text:
