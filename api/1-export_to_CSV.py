@@ -2,19 +2,17 @@
 """ Use requests and json to get and transform user and todo data from
 jsonplaceholder into csv
 """
+import csv
 import requests
 from sys import argv
-import csv
 
 if len(argv) != 2:
     print("user_id required!")
     exit()
 employeeURL = f"http://jsonplaceholder.typicode.com/users/{argv[1]}"
 todoURL = f"http://jsonplaceholder.typicode.com/users/{argv[1]}/todos"
-employeeREQ = requests.get(employeeURL)
-todoREQ = requests.get(todoURL)
-employee = employeeREQ.json()
-todo = todoREQ.json()
+employee = requests.get(employeeURL).json()
+todo = requests.get(todoURL).json()
 
 tasks = []
 for task in todo:

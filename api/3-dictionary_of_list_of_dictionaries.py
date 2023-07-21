@@ -7,10 +7,8 @@ import json
 
 employeeURL = f"http://jsonplaceholder.typicode.com/users/"
 todoURL = f"http://jsonplaceholder.typicode.com/todos"
-employeeREQ = requests.get(employeeURL)
-todoREQ = requests.get(todoURL)
-employee = employeeREQ.json()
-todo = todoREQ.json()
+employee = requests.get(employeeURL).json()
+todo = requests.get(todoURL).json()
 id_to_username = {emp.get('id'): emp.get('username') for emp in employee}
 
 all_users_tasks = {}

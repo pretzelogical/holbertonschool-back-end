@@ -2,8 +2,8 @@
 """ Use requests and json to get and transform user and todo data from
 jsonplaceholder into a json file
 """
-import requests
 import json
+import requests
 from sys import argv
 
 if len(argv) != 2:
@@ -11,10 +11,8 @@ if len(argv) != 2:
     exit()
 employeeURL = f"http://jsonplaceholder.typicode.com/users/{argv[1]}"
 todoURL = f"http://jsonplaceholder.typicode.com/users/{argv[1]}/todos"
-employeeREQ = requests.get(employeeURL)
-todoREQ = requests.get(todoURL)
-employee = employeeREQ.json()
-todo = todoREQ.json()
+employee = requests.get(employeeURL).json()
+todo = requests.get(todoURL).json()
 employee_username = employee.get('username')
 
 user_tasks = []
