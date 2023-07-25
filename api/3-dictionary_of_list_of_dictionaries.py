@@ -2,8 +2,8 @@
 """ Use requests and json to get and transform user and todo data from
 jsonplaceholder into a json file
 """
-import requests
 import json
+import requests
 
 employeeURL = f"http://jsonplaceholder.typicode.com/users/"
 todoURL = f"http://jsonplaceholder.typicode.com/todos"
