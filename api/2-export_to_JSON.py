@@ -2,9 +2,9 @@
 """ Use requests and json to get and transform user and todo data from
 jsonplaceholder into a json file
 """
+from sys import argv
 import json
 import requests
-from sys import argv
 
 if len(argv) != 2:
     print("user_id required!")
